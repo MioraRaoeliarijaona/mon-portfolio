@@ -6,27 +6,27 @@ function Footer() {
   const { t } = useLanguage();
 
   return (
-    <footer className="py-10 px-6 border-t border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-blue-900">
+    <footer className="mt-10 py-10 px-6 bg-transparent">
       <div
         className="
           max-w-4xl mx-auto
           flex flex-col md:flex-row items-center justify-between
           text-center md:text-left
-          space-y-4 md:space-y-0
+          space-y-4 md:space-y-0 rounded-[1.75rem] border border-emerald-600/12 bg-white/72 px-6 py-6 shadow-[0_18px_45px_rgba(15,23,42,0.06)] backdrop-blur-sm dark:border-emerald-400/12 dark:bg-emerald-950/28
         "
       >
         {/* Texte principal */}
-        <p className="text-sm text-slate-600 dark:text-slate-300 font-mono">
-          {t('builtBy') || 'Développé avec ❤️ par Hary Miora Raoeliarijaona'}
+        <p className="text-sm text-slate-700 dark:text-emerald-50/76 font-mono">
+          {t('builtBy') || 'Développé par Hary Miora Raoeliarijaona'}
         </p>
 
         {/* Icônes sociales */}
-        <div className="flex justify-center gap-6 text-slate-500 dark:text-slate-400">
+        <div className="flex justify-center gap-6 text-slate-500 dark:text-emerald-50/58">
           <a
             href="https://github.com/HaryMiora"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+            className="hover:text-emerald-600 dark:hover:text-emerald-300 transition-colors"
           >
             <FaGithub size={20} />
           </a>
@@ -34,14 +34,14 @@ function Footer() {
             href="https://www.linkedin.com/in/miora-raoeliarijaona-6776172ba"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+            className="hover:text-emerald-600 dark:hover:text-emerald-300 transition-colors"
           >
             <FaLinkedin size={20} />
           </a>
         </div>
 
         {/* Droits d’auteur */}
-        <p className="text-xs text-slate-400 dark:text-slate-500">
+        <p className="text-xs text-slate-500 dark:text-emerald-50/46">
           &copy; 2025 Hary Miora Raoeliarijaona. Tous droits réservés.
         </p>
       </div>

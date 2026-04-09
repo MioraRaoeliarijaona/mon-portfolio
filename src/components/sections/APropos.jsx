@@ -9,15 +9,15 @@ function APropos() {
       <div className="max-w-4xl mx-auto">
         {/* Titre */}
         <div className="flex items-center mb-10">
-          <h2 className="text-3xl font-bold text-slate-800 dark:text-slate-100 mr-4">
-            <span className="text-teal-600 dark:text-teal-400 font-mono text-xl mr-2">01.</span>
+          <h2 className="font-display text-3xl font-bold text-slate-900 dark:text-emerald-50 mr-4">
+            <span className="text-emerald-600 dark:text-emerald-300 font-mono text-xl mr-2">01.</span>
             {t('aboutTitle')}
           </h2>
-          <div className="flex-1 h-px bg-slate-300 dark:bg-slate-600 ml-4"></div>
+          <div className="flex-1 h-px bg-emerald-600/18 dark:bg-emerald-300/18 ml-4"></div>
         </div>
 
         {/* Texte principal */}
-        <div className="space-y-6 text-slate-600 dark:text-slate-400 leading-relaxed text-base sm:text-lg">
+        <div className="space-y-6 text-slate-700 dark:text-emerald-50/72 leading-relaxed text-base sm:text-lg">
           <p>
             Passionnée par le développement logiciel, je suis actuellement étudiante en Master 1 Informatique à l’École Nationale d’Informatique de Fianarantsoa. J’ai découvert le développement web en 2023, et depuis, je n’ai cessé d’approfondir mes compétences à travers des projets personnels, scolaires et des stages.
           </p>
