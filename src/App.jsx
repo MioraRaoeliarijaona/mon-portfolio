@@ -16,10 +16,6 @@ function App() {
     } else {
       htmlElement.classList.remove('dark');
     }
-    
-    // Debug - vérifiez dans la console
-    console.log('Dark mode:', darkMode);
-    console.log('HTML classes:', htmlElement.className);
   }, [darkMode]);
 
   const toggleDarkMode = () => {
@@ -27,10 +23,10 @@ function App() {
   };
 
   return (
-    <div className={`font-sans min-h-screen transition-colors duration-300 ${
+    <div className={`min-h-screen transition-colors duration-300 ${
       darkMode 
-        ? 'text-white bg-gray-900' 
-        : 'text-gray-900 bg-white'
+        ? 'text-emerald-50 bg-[#081511]' 
+        : 'text-slate-900 bg-[#f6f8f5]'
     }`}>
       <Layout darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
     </div>

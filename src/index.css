@@ -3,21 +3,56 @@
 /* Removed invalid @config at-rule. Set darkMode in tailwind.config.js instead. */
 
 @layer base {
+  :root {
+    --bg-primary: #f6f8f5;
+    --bg-surface: rgba(255, 255, 255, 0.82);
+    --bg-surface-strong: #ffffff;
+    --border-soft: rgba(15, 23, 42, 0.08);
+    --text-primary: #112119;
+    --text-secondary: #4d5f57;
+    --accent: #0f9f7f;
+    --accent-strong: #0a7d63;
+  }
+
+  html.dark {
+    --bg-primary: #081511;
+    --bg-surface: rgba(10, 24, 20, 0.82);
+    --bg-surface-strong: #0d1c17;
+    --border-soft: rgba(148, 163, 184, 0.14);
+    --text-primary: #ecfdf5;
+    --text-secondary: #9cb8ae;
+    --accent: #34d399;
+    --accent-strong: #10b981;
+  }
+
   html {
     scroll-behavior: smooth;
   }
   
   body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background:
+      radial-gradient(circle at top left, rgba(15, 159, 127, 0.12), transparent 30%),
+      radial-gradient(circle at top right, rgba(16, 185, 129, 0.08), transparent 22%),
+      linear-gradient(180deg, var(--bg-primary), color-mix(in srgb, var(--bg-primary) 82%, white 18%));
+    color: var(--text-primary);
   }
 
   .font-mono {
     font-family: 'JetBrains Mono', 'SF Mono', Monaco, Inconsolata, 'Roboto Mono',
       'Source Code Pro', monospace;
+  }
+
+  .font-display {
+    font-family: 'Space Grotesk', 'Manrope', sans-serif;
+  }
+
+  * {
+    border-color: var(--border-soft);
   }
 }
 
@@ -33,34 +68,34 @@
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #f3f4f6; /* bg-gray-100 */
+  background-color: rgba(148, 163, 184, 0.12);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #d1d5db; /* bg-gray-300 */
-  border-radius: 9999px; /* rounded-full */
+  background-color: rgba(77, 95, 87, 0.35);
+  border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #9ca3af; /* bg-gray-400 */
+  background-color: rgba(15, 159, 127, 0.5);
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
-  background-color: #6b7280; /* bg-gray-500 */
+  background-color: rgba(52, 211, 153, 0.55);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #d1d5db; /* bg-gray-300 */
-  border-radius: 9999px; /* rounded-full */
+  background-color: rgba(77, 95, 87, 0.35);
+  border-radius: 9999px;
 }
 
 .dark ::-webkit-scrollbar-thumb {
-  background-color: #4b5563; /* bg-gray-600 */
+  background-color: rgba(148, 163, 184, 0.35);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #9ca3af; /* bg-gray-400 */
+  background-color: rgba(15, 159, 127, 0.5);
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
-  background-color: #6b7280; /* bg-gray-500 */
+  background-color: rgba(52, 211, 153, 0.55);
 }

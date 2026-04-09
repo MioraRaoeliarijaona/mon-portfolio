@@ -11,7 +11,7 @@ function Layout({ darkMode, toggleDarkMode }) {
   return (
     <div
       className={`flex flex-col min-h-screen transition-colors duration-300 ${
-        darkMode ? 'bg-gray-900' : 'bg-white'
+        darkMode ? 'bg-[#081511]' : 'bg-[#f6f8f5]'
       }`}
     >
       {/* Navbar en haut */}
