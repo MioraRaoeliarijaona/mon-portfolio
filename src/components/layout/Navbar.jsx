@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { HiSun, HiMoon, HiMenuAlt3, HiX } from 'react-icons/hi';
 import { useLanguage } from '../../hooks/useLanguage';
+import logoMiora from '/assets/images/logo-miora.png';
 
 function Navbar({ darkMode, toggleDarkMode }) {
   const { language, toggleLanguage, t } = useLanguage();
@@ -44,21 +45,16 @@ function Navbar({ darkMode, toggleDarkMode }) {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 h-20 flex items-center justify-between px-6 sm:px-8 border-b transition-colors duration-300 z-40 ${
+        className={`fixed top-0 left-0 right-0 h-20 flex items-center justify-between px-6 sm:px-8 transition-colors duration-300 z-40 ${
           darkMode
-            ? 'bg-gray-900 border-gray-700'
-            : 'bg-white border-gray-200'
+            ? 'bg-[rgba(8,21,17,0.78)] backdrop-blur-xl'
+            : 'bg-[rgba(246,248,245,0.78)] backdrop-blur-xl'
         }`}
       >
-        {/* Logo/Brand - Initiale stylisée */}
-        <div
-          className={`font-bold text-2xl w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300 ${
-            darkMode
-              ? 'bg-teal-500/20 text-teal-400'
-              : 'bg-teal-500/10 text-teal-600'
-          }`}
-        >
-          H
+        <div className="flex items-center gap-3">
+          <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-2xl border border-emerald-500/20 bg-white/80 shadow-[0_12px_30px_rgba(15,159,127,0.12)] dark:bg-emerald-950/70">
+            <img src={logoMiora} alt="Logo Miora" className="h-9 w-9 object-contain" />
+          </div>
         </div>
 
         {/* Menu navigation au centre - Desktop only */}
@@ -69,10 +65,10 @@ function Navbar({ darkMode, toggleDarkMode }) {
               onClick={() => scrollToSection(item.key)}
               className={`text-sm font-semibold transition-colors duration-200 ${
                 activeSection === item.key
-                  ? 'text-teal-500'
+                  ? 'text-emerald-600 dark:text-emerald-300'
                   : darkMode
-                  ? 'text-gray-300 hover:text-teal-400'
-                  : 'text-gray-600 hover:text-teal-500'
+                  ? 'text-emerald-50/78 hover:text-emerald-300'
+                  : 'text-slate-700 hover:text-emerald-600'
               }`}
             >
               {item.label}
@@ -88,8 +84,8 @@ function Navbar({ darkMode, toggleDarkMode }) {
               onClick={toggleLanguage}
               className={`px-3 py-2 rounded-lg text-sm font-semibold transition-colors duration-200 ${
                 darkMode
-                  ? 'bg-gray-800 text-gray-300 hover:bg-gray-700'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  ? 'bg-white/6 text-emerald-50/85 hover:bg-white/10'
+                  : 'bg-white/70 text-slate-700 hover:bg-white'
               }`}
             >
               {language === 'en' ? 'FR' : 'EN'}
@@ -99,8 +95,8 @@ function Navbar({ darkMode, toggleDarkMode }) {
               onClick={toggleDarkMode}
               className={`p-2 rounded-lg transition-colors duration-200 ${
                 darkMode
-                  ? 'bg-gray-800 text-yellow-400 hover:bg-gray-700'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  ? 'bg-white/6 text-emerald-300 hover:bg-white/10'
+                  : 'bg-white/70 text-slate-700 hover:bg-white'
               }`}
             >
               {darkMode ? <HiSun size={20} /> : <HiMoon size={20} />}
@@ -112,8 +108,8 @@ function Navbar({ darkMode, toggleDarkMode }) {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className={`md:hidden p-2 rounded-lg transition-colors duration-200 ${
               darkMode
-                ? 'bg-gray-800 text-gray-300 hover:bg-gray-700'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                ? 'bg-white/6 text-emerald-50/90 hover:bg-white/10'
+                : 'bg-white/70 text-slate-700 hover:bg-white'
             }`}
           >
             {mobileMenuOpen ? <HiX size={24} /> : <HiMenuAlt3 size={24} />}
@@ -124,25 +120,25 @@ function Navbar({ darkMode, toggleDarkMode }) {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div
-          className={`fixed top-20 left-0 right-0 md:hidden transition-colors duration-300 z-30 border-b ${
+          className={`fixed top-20 left-0 right-0 md:hidden transition-colors duration-300 z-30 ${
             darkMode
-              ? 'bg-gray-800 border-gray-700'
-              : 'bg-gray-50 border-gray-200'
+              ? 'bg-[rgba(8,21,17,0.96)] backdrop-blur-xl'
+              : 'bg-[rgba(246,248,245,0.96)] backdrop-blur-xl'
           }`}
         >
           <div className="px-4 py-6 space-y-4">
             {/* Navigation items mobile */}
-            <div className="space-y-3 pb-4 border-b border-gray-700 dark:border-gray-600">
+            <div className="space-y-3 pb-4">
               {navigationItems.map((item) => (
                 <button
                   key={item.key}
                   onClick={() => scrollToSection(item.key)}
                   className={`block w-full text-left px-4 py-2 rounded-lg font-semibold transition-colors duration-200 ${
                     activeSection === item.key
-                      ? 'bg-teal-500 text-white'
+                      ? 'bg-emerald-600 text-white'
                       : darkMode
-                      ? 'text-gray-300 hover:bg-gray-700'
-                      : 'text-gray-700 hover:bg-gray-200'
+                      ? 'text-emerald-50/90 hover:bg-white/8'
+                      : 'text-slate-700 hover:bg-white'
                   }`}
                 >
                   {item.label}
@@ -156,8 +152,8 @@ function Navbar({ darkMode, toggleDarkMode }) {
                 onClick={toggleLanguage}
                 className={`flex-1 px-4 py-2 rounded-lg text-sm font-semibold transition-colors duration-200 ${
                   darkMode
-                    ? 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                    ? 'bg-white/6 text-emerald-50/85 hover:bg-white/10'
+                    : 'bg-white text-slate-700 hover:bg-white'
                 }`}
               >
                 {language === 'en' ? 'Français' : 'English'}
@@ -167,8 +163,8 @@ function Navbar({ darkMode, toggleDarkMode }) {
                 onClick={toggleDarkMode}
                 className={`flex-1 px-4 py-2 rounded-lg text-sm font-semibold transition-colors duration-200 flex items-center justify-center gap-2 ${
                   darkMode
-                    ? 'bg-gray-700 text-yellow-400 hover:bg-gray-600'
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                    ? 'bg-white/6 text-emerald-300 hover:bg-white/10'
+                    : 'bg-white text-slate-700 hover:bg-white'
                 }`}
               >
                 {darkMode ? (

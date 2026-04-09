@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { HiSun, HiMoon, HiX } from 'react-icons/hi';
 import { useLanguage } from '../../hooks/useLanguage';
+import logoMiora from '/assets/images/logo-miora.png';
 
 function Sidebar({ darkMode, toggleDarkMode, closeSidebar }) {
   const { language, toggleLanguage, t } = useLanguage();
@@ -37,8 +38,8 @@ function Sidebar({ darkMode, toggleDarkMode, closeSidebar }) {
     <aside
       className={`h-full flex flex-col justify-between px-8 py-12 border-r transition-colors duration-300 ${
         darkMode
-          ? 'bg-gray-900 border-gray-700'
-          : 'bg-gray-50 border-gray-200'
+          ? 'bg-[#081511] border-transparent'
+          : 'bg-[#f6f8f5] border-transparent'
       }`}
     >
       {/* Bouton fermeture mobile */}
@@ -52,6 +53,12 @@ function Sidebar({ darkMode, toggleDarkMode, closeSidebar }) {
       </div>
 
       {/* Navigation principale */}
+      <div className="mb-10 flex items-center gap-4">
+        <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl border border-emerald-500/20 bg-white/85 shadow-[0_12px_30px_rgba(15,159,127,0.14)] dark:bg-emerald-950/70">
+          <img src={logoMiora} alt="Logo Miora" className="h-11 w-11 object-contain" />
+        </div>
+      </div>
+
       <nav className="space-y-6">
         {[
           { key: 'home', label: t('home') || 'Accueil' },
