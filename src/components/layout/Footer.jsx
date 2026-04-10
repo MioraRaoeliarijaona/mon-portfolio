@@ -1,10 +1,7 @@
 import React from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { useLanguage } from '../../hooks/useLanguage';
 
 function Footer() {
-  const { t } = useLanguage();
-
   return (
     <footer className="mt-10 py-10 px-6 bg-transparent">
       <div
@@ -12,14 +9,9 @@ function Footer() {
           max-w-4xl mx-auto
           flex flex-col md:flex-row items-center justify-between
           text-center md:text-left
-          space-y-4 md:space-y-0 rounded-[1.75rem] border border-emerald-600/12 bg-white/72 px-6 py-6 shadow-[0_18px_45px_rgba(15,23,42,0.06)] backdrop-blur-sm dark:border-emerald-400/12 dark:bg-emerald-950/28
+          space-y-4 md:space-y-0 rounded-[1.75rem] border border-emerald-600/12 bg-white px-6 py-6 shadow-[0_18px_45px_rgba(15,23,42,0.06)] backdrop-blur-sm dark:border-emerald-400/12 dark:bg-emerald-950/28
         "
       >
-        {/* Texte principal */}
-        <p className="text-sm text-slate-700 dark:text-emerald-50/76 font-mono">
-          {t('builtBy') || 'Développé par Hary Miora Raoeliarijaona'}
-        </p>
-
         {/* Icônes sociales */}
         <div className="flex justify-center gap-6 text-slate-500 dark:text-emerald-50/58">
           <a

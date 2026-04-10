@@ -3,6 +3,20 @@ import { useLanguage } from '../../hooks/useLanguage';
 
 function APropos() {
   const { t } = useLanguage();
+  const services = [
+    {
+      title: t('aboutText1'),
+      description: t('aboutDesc1'),
+    },
+    {
+      title: t('aboutText2'),
+      description: t('aboutDesc2'),
+    },
+    {
+      title: t('aboutText3'),
+      description: t('aboutDesc3'),
+    },
+  ];
 
   return (
     <section id="about" className="py-20 px-8">
@@ -16,19 +30,21 @@ function APropos() {
           <div className="flex-1 h-px bg-emerald-600/18 dark:bg-emerald-300/18 ml-4"></div>
         </div>
 
-        {/* Texte principal */}
-        <div className="space-y-6 text-slate-700 dark:text-emerald-50/72 leading-relaxed text-base sm:text-lg">
-          <p>
-            Passionnée par le développement logiciel, je suis actuellement étudiante en Master 1 Informatique à l’École Nationale d’Informatique de Fianarantsoa. J’ai découvert le développement web en 2023, et depuis, je n’ai cessé d’approfondir mes compétences à travers des projets personnels, scolaires et des stages.
-          </p>
-
-          <p>
-            J’aime transformer des idées en interfaces fonctionnelles et esthétiques. Mes expériences m’ont permis de travailler sur des projets concrets tels que des systèmes de gestion de tickets, des sites de location de voitures ou encore des portails bancaires, en utilisant des technologies comme React.js, Nest.js ou MySQL.
-          </p>
-
-          <p>
-            Curieuse, rigoureuse et motivée, je m’efforce toujours de proposer des solutions performantes, accessibles et adaptées aux besoins des utilisateurs.
-          </p>
+        <div className="grid gap-6 md:grid-cols-3">
+          {services.map((service) => (
+            <article
+              key={service.title}
+              className="rounded-[1.5rem] border border-emerald-600/20 bg-white p-6 shadow-[0_18px_40px_rgba(15,23,42,0.06)] transition duration-200 hover:-translate-y-1 hover:border-emerald-500/40 dark:border-white/18 dark:bg-[rgba(8,21,17,0.82)]"
+            >
+              <div className="mb-4 h-10 w-10 rounded-2xl bg-emerald-600/10 ring-1 ring-emerald-600/20 dark:bg-emerald-400/10 dark:ring-white/15" />
+              <h3 className="mb-3 font-display text-xl font-bold text-slate-900 dark:text-white">
+                {service.title}
+              </h3>
+              <p className="text-sm leading-7 text-slate-800 dark:text-white">
+                {service.description}
+              </p>
+            </article>
+          ))}
         </div>
       </div>
     </section>

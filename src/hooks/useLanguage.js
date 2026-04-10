@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 const translations = {
   fr: {
     // Navigation
-    about: 'À propos',
+    about: 'Mes services',
     experience: 'Expérience',
     projects: 'Projets',
     contact: 'Contact',
@@ -18,12 +18,16 @@ const translations = {
     viewProjects: 'Voir mes projets',
 
     // About section
-    aboutTitle: 'À propos de moi',
-    aboutText1:
-      'Bonjour ! Je suis Miora, étudiant à l’École Nationale d’Informatique. Ma passion pour le développement web a commencé en 2023, avec une envie de créer des applications utiles et efficaces.',
-    aboutText2:
-      'J’ai eu l’opportunité de travailler sur des projets variés, allant du portfolio personnel aux systèmes de gestion (tickets, location de voitures, gestion bancaire). Mon objectif est de devenir un développeur complet, maîtrisant à la fois le frontend et le backend.',
-    aboutText3: 'Voici quelques technologies que j’utilise fréquemment :',
+    aboutTitle: 'Mes services',
+    aboutText1: 'Interfaces web modernes',
+    aboutText2: 'Développement full-stack',
+    aboutText3: 'Optimisation et accompagnement',
+    aboutDesc1:
+      'Je conçois des interfaces sobres, rapides et responsives, avec une attention particulière sur la lisibilité, l’expérience utilisateur et l’identité visuelle.',
+    aboutDesc2:
+      'Je développe des applications complètes en reliant frontend, backend, base de données et logique métier pour aboutir à un produit réellement utilisable.',
+    aboutDesc3:
+      'Je peux aussi améliorer un projet existant: refonte UI, corrections, performance, structure du code et préparation à la mise en ligne.',
 
     // Projects section
     projectsTitle: 'Quelques projets réalisés',
@@ -45,7 +49,7 @@ const translations = {
     sayHello: 'Me contacter',
 
     // Footer
-    builtBy: 'Conçu et développé par Hary Miora RAOELIARIJAONA',
+    builtBy: '',
 
     // Skills
     technologies: 'Technologies'
@@ -53,7 +57,7 @@ const translations = {
 
   en: {
     // Navigation
-    about: 'About',
+    about: 'Services',
     experience: 'Experience',
     projects: 'Projects',
     contact: 'Contact',
@@ -68,12 +72,16 @@ const translations = {
     viewProjects: 'See my projects',
 
     // About section
-    aboutTitle: 'About Me',
-    aboutText1:
-      'Hi! I’m Miora, a computer science student at ENI Madagascar. I started exploring web development in 2023 and quickly became passionate about building useful and elegant web apps.',
-    aboutText2:
-      'I’ve worked on various projects, from personal portfolios to real-world systems like ticketing and banking apps. My goal is to become a proficient full-stack developer.',
-    aboutText3: 'Here are a few technologies I frequently work with:',
+    aboutTitle: 'My Services',
+    aboutText1: 'Modern web interfaces',
+    aboutText2: 'Full-stack development',
+    aboutText3: 'Optimization and support',
+    aboutDesc1:
+      'I design clean, fast and responsive interfaces with strong attention to readability, user experience and visual identity.',
+    aboutDesc2:
+      'I build complete applications by connecting frontend, backend, database and business logic into a product that is ready to be used.',
+    aboutDesc3:
+      'I can also improve an existing project through UI redesign, bug fixing, performance tuning, code structure cleanup and launch preparation.',
 
     // Projects section
     projectsTitle: 'Projects I’ve Built',
@@ -95,7 +103,7 @@ const translations = {
     sayHello: 'Contact Me',
 
     // Footer
-    builtBy: 'Designed & built by Hary Miora RAOELIARIJAONA',
+    builtBy: '',
 
     // Skills
     technologies: 'Technologies'
