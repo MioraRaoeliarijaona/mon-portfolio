@@ -38,9 +38,12 @@ function Contact() {
         </div>
 
         {/* Formulaire de contact */}
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-6 rounded-[1.75rem] border border-emerald-600/22 bg-white p-6 shadow-[0_18px_45px_rgba(15,23,42,0.06)] dark:border-white/14 dark:bg-[rgba(8,21,17,0.9)] dark:shadow-[0_18px_45px_rgba(0,0,0,0.2)]"
+        >
           <div className="flex flex-col text-left">
-            <label htmlFor="nom" className="mb-2 font-semibold text-slate-800 dark:text-emerald-50/85">
+            <label htmlFor="nom" className="mb-2 font-semibold text-slate-800 dark:text-white">
               Nom
             </label>
             <input
@@ -50,12 +53,12 @@ function Contact() {
               value={formData.nom}
               onChange={handleChange}
               required
-              className="rounded-2xl border border-emerald-600/24 bg-white px-4 py-3 text-slate-900 shadow-[0_12px_34px_rgba(15,23,42,0.05)] outline-none transition focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 dark:border-emerald-400/24 dark:bg-white dark:text-slate-900"
+              className="rounded-2xl border border-emerald-600/24 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-500 shadow-[0_12px_34px_rgba(15,23,42,0.05)] outline-none transition focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 dark:border-white/14 dark:bg-[rgba(8,21,17,0.92)] dark:text-white dark:placeholder:text-white/45"
             />
           </div>
 
           <div className="flex flex-col text-left">
-            <label htmlFor="email" className="mb-2 font-semibold text-slate-800 dark:text-emerald-50/85">
+            <label htmlFor="email" className="mb-2 font-semibold text-slate-800 dark:text-white">
               Adresse Email
             </label>
             <input
@@ -65,12 +68,12 @@ function Contact() {
               value={formData.email}
               onChange={handleChange}
               required
-              className="rounded-2xl border border-emerald-600/24 bg-white px-4 py-3 text-slate-900 shadow-[0_12px_34px_rgba(15,23,42,0.05)] outline-none transition focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 dark:border-emerald-400/24 dark:bg-white dark:text-slate-900"
+              className="rounded-2xl border border-emerald-600/24 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-500 shadow-[0_12px_34px_rgba(15,23,42,0.05)] outline-none transition focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 dark:border-white/14 dark:bg-[rgba(8,21,17,0.92)] dark:text-white dark:placeholder:text-white/45"
             />
           </div>
 
           <div className="flex flex-col text-left">
-            <label htmlFor="message" className="mb-2 font-semibold text-slate-800 dark:text-emerald-50/85">
+            <label htmlFor="message" className="mb-2 font-semibold text-slate-800 dark:text-white">
               Message
             </label>
             <textarea
@@ -80,7 +83,7 @@ function Contact() {
               value={formData.message}
               onChange={handleChange}
               required
-              className="resize-none rounded-2xl border border-emerald-600/24 bg-white px-4 py-3 text-slate-900 shadow-[0_12px_34px_rgba(15,23,42,0.05)] outline-none transition focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 dark:border-emerald-400/24 dark:bg-white dark:text-slate-900"
+              className="resize-none rounded-2xl border border-emerald-600/24 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-500 shadow-[0_12px_34px_rgba(15,23,42,0.05)] outline-none transition focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 dark:border-white/14 dark:bg-[rgba(8,21,17,0.92)] dark:text-white dark:placeholder:text-white/45"
             ></textarea>
           </div>
 

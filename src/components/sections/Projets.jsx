@@ -7,7 +7,7 @@ import deezerProject from '../../assets/projects/deezer-project.svg';
 import bookingProject from '../../assets/projects/booking-project.svg';
 
 function Projets() {
-  useLanguage();
+  const { t } = useLanguage();
 
   const projects = [
     {
@@ -58,9 +58,9 @@ function Projets() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="overflow-hidden rounded-[1.75rem] border border-emerald-600/24 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.08)] transition duration-300 hover:-translate-y-1 hover:border-emerald-500/50 hover:shadow-[0_24px_55px_rgba(15,159,127,0.12)] dark:border-emerald-400/22 dark:bg-white"
+              className="overflow-hidden rounded-[1.75rem] border border-emerald-600/24 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.08)] transition duration-300 hover:-translate-y-1 hover:border-emerald-500/50 hover:shadow-[0_24px_55px_rgba(15,159,127,0.12)] dark:border-white/16 dark:bg-[rgba(8,21,17,0.9)] dark:shadow-[0_18px_45px_rgba(0,0,0,0.22)]"
             >
-              <div className="border-b border-emerald-600/12 bg-[linear-gradient(180deg,rgba(15,159,127,0.08),rgba(255,255,255,0.88))] p-4">
+              <div className="border-b border-emerald-600/12 bg-[linear-gradient(180deg,rgba(15,159,127,0.08),rgba(255,255,255,0.88))] p-4 dark:border-white/10 dark:bg-[linear-gradient(180deg,rgba(52,211,153,0.08),rgba(8,21,17,0.92))]">
                 <img
                   src={project.image}
                   alt={`Illustration ${project.title}`}
@@ -69,41 +69,75 @@ function Projets() {
               </div>
 
               <div className="flex h-full flex-col justify-between p-6">
-              {/* Titre + liens */}
-              <div className="flex justify-between items-start mb-4">
-                <h3 className="text-xl font-semibold text-slate-900">
-                  {project.title}
-                </h3>
-                <div className="flex gap-3">
-                  {project.github && (
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-emerald-600 transition">
+                {/* Titre */}
+                <div className="mb-4 flex items-start justify-between gap-3">
+                  <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
+                    {project.title}
+                  </h3>
+                  <div className="flex gap-3">
+                    <span className="text-slate-500 transition dark:text-white/72">
                       <FaGithub size={18} />
-                    </a>
-                  )}
-                  {project.live && project.live !== '#' && (
-                    <a href={project.live} target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-emerald-600 transition">
+                    </span>
+                    <span className="text-slate-500 transition dark:text-white/72">
                       <FaExternalLinkAlt size={16} />
-                    </a>
-                  )}
+                    </span>
+                  </div>
                 </div>
-              </div>
 
-              {/* Description */}
-              <p className="text-slate-700 text-sm mb-5 leading-6">
-                {project.description}
-              </p>
+                {/* Description */}
+                <p className="mb-5 text-sm leading-6 text-slate-800 dark:text-white">
+                  {project.description}
+                </p>
 
-              {/* Technologies */}
-              <div className="flex flex-wrap gap-2 mt-auto">
-                {project.technologies.map((tech, i) => (
-                  <span
-                    key={i}
-                    className="rounded-full border border-emerald-600/18 bg-emerald-50 px-3 py-1 text-xs font-mono text-emerald-800"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
+                {/* Technologies */}
+                <div className="mt-auto">
+                  <div className="mb-5 flex flex-wrap gap-2">
+                    {project.technologies.map((tech, i) => (
+                      <span
+                        key={i}
+                        className="rounded-full border border-emerald-600/18 bg-emerald-50 px-3 py-1 text-xs font-mono text-emerald-800 dark:border-white/14 dark:bg-white/6 dark:text-white"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex flex-wrap gap-3">
+                    {project.live && project.live !== '#' ? (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 rounded-2xl bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white shadow-[0_14px_30px_rgba(15,159,127,0.24)] transition hover:-translate-y-0.5 hover:bg-emerald-700"
+                      >
+                        <FaExternalLinkAlt size={14} />
+                        {t('viewLive')}
+                      </a>
+                    ) : (
+                      <span className="inline-flex items-center gap-2 rounded-2xl border border-emerald-600/18 bg-white px-4 py-2.5 text-sm font-semibold text-slate-500 dark:border-white/14 dark:bg-transparent dark:text-white/50">
+                        <FaExternalLinkAlt size={14} />
+                        {t('viewLive')}
+                      </span>
+                    )}
+
+                    {project.github && project.github !== '#' ? (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 rounded-2xl border border-emerald-600/24 bg-white px-4 py-2.5 text-sm font-semibold text-slate-900 transition hover:-translate-y-0.5 hover:border-emerald-500/45 hover:text-emerald-700 dark:border-white/16 dark:bg-transparent dark:text-white"
+                      >
+                        <FaGithub size={15} />
+                        {t('viewCode')}
+                      </a>
+                    ) : (
+                      <span className="inline-flex items-center gap-2 rounded-2xl border border-emerald-600/18 bg-white px-4 py-2.5 text-sm font-semibold text-slate-500 dark:border-white/14 dark:bg-transparent dark:text-white/50">
+                        <FaGithub size={15} />
+                        {t('viewCode')}
+                      </span>
+                    )}
+                  </div>
+                </div>
               </div>
             </div>
           ))}
