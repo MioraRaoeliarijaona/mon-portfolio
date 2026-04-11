@@ -16,7 +16,7 @@ function Contact() {
           <div className="flex-1 h-px bg-emerald-600/18 dark:bg-emerald-300/18 ml-4"></div>
         </div>
 
-        <div className="panel-surface rounded-[1.75rem] p-8 text-center">
+        <div className="py-2 text-center">
           <p className="adaptive-contrast-text-soft mx-auto mb-6 max-w-xl text-base leading-7">
             {t('contactText')}
           </p>

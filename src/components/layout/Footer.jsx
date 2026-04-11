@@ -6,10 +6,10 @@ function Footer() {
     <footer className="mt-10 py-10 px-6 bg-transparent">
       <div
         className="
-          panel-surface max-w-4xl mx-auto
+          max-w-4xl mx-auto
           flex flex-col md:flex-row items-center justify-between
           text-center md:text-left
-          space-y-4 md:space-y-0 rounded-[1.75rem] px-6 py-6 backdrop-blur-sm
+          space-y-4 md:space-y-0 px-2 py-2
         "
       >
         {/* Icônes sociales */}

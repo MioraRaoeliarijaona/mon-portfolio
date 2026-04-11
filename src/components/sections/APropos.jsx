@@ -29,20 +29,19 @@ function APropos() {
           <div className="flex-1 h-px bg-emerald-600/18 dark:bg-emerald-300/18 ml-4"></div>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="flex flex-col gap-10 text-left">
           {services.map((service) => (
-            <blockquote
+            <div
               key={service.title}
-              className="panel-surface-soft rounded-[1.75rem] p-6 italic transition duration-200 hover:-translate-y-1 hover:border-emerald-500/50"
+              className="max-w-3xl border-l-2 border-emerald-600/18 pl-5 dark:border-emerald-300/18"
             >
-              <p className="mb-5 text-4xl leading-none text-emerald-600/45 dark:text-emerald-300/40">“</p>
-              <h3 className="adaptive-contrast-text mb-3 font-display text-xl font-bold not-italic">
+              <h3 className="adaptive-contrast-text mb-3 font-display text-xl font-bold">
                 {service.title}
               </h3>
-              <p className="adaptive-contrast-text text-sm leading-7">
+              <p className="adaptive-contrast-text-soft text-base leading-8">
                 {service.description}
               </p>
-            </blockquote>
+            </div>
           ))}
         </div>
       </div>
