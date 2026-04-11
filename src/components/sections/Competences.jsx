@@ -93,7 +93,7 @@ function Competences() {
                 {category.skills.map((skill, skillIndex) => (
                   <div
                     key={skillIndex}
-                    className="flex w-[92px] flex-col items-center justify-center rounded-2xl border border-emerald-600/18 bg-white/82 px-3 py-4 shadow-[0_14px_35px_rgba(15,23,42,0.06)] transition duration-200 hover:-translate-y-1 hover:border-emerald-500/45 hover:shadow-[0_18px_40px_rgba(15,159,127,0.12)] dark:border-emerald-400/18 dark:bg-emerald-950/35"
+                    className="panel-surface-soft flex w-[92px] flex-col items-center justify-center rounded-2xl px-3 py-4 transition duration-200 hover:-translate-y-1 hover:border-emerald-500/50 hover:shadow-[0_18px_40px_rgba(15,159,127,0.12)]"
                   >
                     <img
                       src={skill.icon}

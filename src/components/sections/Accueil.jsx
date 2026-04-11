@@ -53,13 +53,10 @@ function Accueil() {
             href={cvFile}
             download
             className="
-              group inline-flex items-center gap-3 px-6 py-3.5 
-              border border-emerald-600/35 dark:border-emerald-400/40
-              bg-white/80 dark:bg-emerald-950/55
-              text-emerald-700 dark:text-emerald-300
+              panel-surface group inline-flex items-center gap-3 px-6 py-3.5 
+              text-slate-900 dark:text-emerald-300
               font-semibold rounded-2xl
-              shadow-[0_18px_45px_rgba(15,159,127,0.12)]
-              hover:-translate-y-0.5 hover:bg-white dark:hover:bg-emerald-950/80
+              hover:-translate-y-0.5 hover:border-emerald-600/60
               transition-all duration-200
             "
           >

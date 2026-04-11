@@ -34,7 +34,7 @@ function APropos() {
           {services.map((service) => (
             <article
               key={service.title}
-              className="rounded-[1.5rem] border border-emerald-600/20 bg-white p-6 shadow-[0_18px_40px_rgba(15,23,42,0.06)] transition duration-200 hover:-translate-y-1 hover:border-emerald-500/40 dark:border-white/18 dark:bg-[rgba(8,21,17,0.82)]"
+              className="panel-surface-soft rounded-[1.5rem] p-6 transition duration-200 hover:-translate-y-1 hover:border-emerald-500/50"
             >
               <div className="mb-4 h-10 w-10 rounded-2xl bg-emerald-600/10 ring-1 ring-emerald-600/20 dark:bg-emerald-400/10 dark:ring-white/15" />
               <h3 className="mb-3 font-display text-xl font-bold text-slate-900 dark:text-white">
