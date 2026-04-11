@@ -1,7 +1,10 @@
 import React from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { useLanguage } from '../../hooks/useLanguage';
 
 function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="mt-10 py-10 px-6 bg-transparent">
       <div
@@ -34,7 +37,7 @@ function Footer() {
 
         {/* Droits d’auteur */}
         <p className="adaptive-contrast-text-soft text-xs">
-          &copy; 2025 Hary Miora Raoeliarijaona. Tous droits réservés.
+          {t('footerRights')}
         </p>
       </div>
     </footer>

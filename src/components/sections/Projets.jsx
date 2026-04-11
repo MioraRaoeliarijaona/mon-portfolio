@@ -11,30 +11,30 @@ function Projets() {
 
   const projects = [
     {
-      title: 'Portfolio personnel',
-      description: 'Développement de mon portfolio pour présenter mes compétences, parcours et projets récents.',
+      title: t('projectPortfolioTitle'),
+      description: t('projectPortfolioDesc'),
       technologies: ['React.js', 'Tailwind CSS'],
       github: 'https://github.com/HaryMiora/portfolio',
       live: '#',
       image: portfolioProject
     },
     {
-      title: 'Todo App',
-      description: 'Application de gestion de tâches avec enregistrement local et interface responsive.',
+      title: t('projectTodoTitle'),
+      description: t('projectTodoDesc'),
       technologies: ['React', 'Tailwind CSS', 'JavaScript', 'Local Storage'],
       github: '#',
       image: todoProject
     },
     {
-      title: 'Clone Deezer',
-      description: 'Clone simplifié de Deezer avec lecteur audio, recherche dynamique et playlists.',
+      title: t('projectDeezerTitle'),
+      description: t('projectDeezerDesc'),
       technologies: ['Vue.js', 'JavaScript', 'API', 'CSS3'],
       github: '#',
       image: deezerProject
     },
     {
-      title: 'Booking App',
-      description: 'Application fullstack pour réservation de salles avec authentification, WebSocket et calendrier.',
+      title: t('projectBookingTitle'),
+      description: t('projectBookingDesc'),
       technologies: ['React', 'Express', 'Prisma', 'MySQL', 'Socket.io'],
       github: '#',
       image: bookingProject
@@ -47,7 +47,7 @@ function Projets() {
         {/* Titre */}
         <div className="flex items-center mb-12">
           <h2 className="adaptive-contrast-text font-display text-3xl font-bold mr-4">
-            Mes projets
+            {t('projectsTitle')}
           </h2>
           <div className="flex-1 h-px bg-emerald-600/18 dark:bg-emerald-300/18 ml-4"></div>
         </div>

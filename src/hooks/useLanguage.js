@@ -1,8 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useSyncExternalStore } from 'react';
+
+const LANGUAGE_STORAGE_KEY = 'language';
+const LANGUAGE_EVENT = 'portfolio-language-change';
 
 const translations = {
   fr: {
     // Navigation
+    home: 'Accueil',
     about: 'Mes services',
     experience: 'Expérience',
     projects: 'Projets',
@@ -13,8 +17,9 @@ const translations = {
     name: 'Hary Miora RAOELIARIJAONA',
     title: 'Étudiant en informatique passionné par le développement web.',
     subtitle: 'Développeur Web Full-Stack',
+    downloadCv: 'Download CV',
     description:
-      'Étudiant en Master 1 Informatique à l’ENI Fianarantsoa, passionné par la création d’applications web modernes. Je m’investis dans le développement de solutions performantes, accessibles et centrées sur l’utilisateur.',
+      'Étudiant en Master II Informatique à l’ENI Fianarantsoa, passionnée par la création d’applications web modernes. Je m’investis dans le développement de solutions performantes, accessibles et centrées sur l’utilisateur.',
     viewProjects: 'Voir mes projets',
 
     // About section
@@ -29,15 +34,27 @@ const translations = {
     aboutDesc3:
       'Je peux aussi améliorer un projet existant: refonte UI, corrections, performance, structure du code et préparation à la mise en ligne.',
 
+    // Skills section
+    skillsFrontend: 'Frontend',
+    skillsBackend: 'Backend',
+    skillsDatabase: 'Base de données',
+    skillsTools: 'Outils & autres',
+
     // Projects section
-    projectsTitle: 'Quelques projets réalisés',
+    projectsTitle: 'Mes projets',
     featuredProject: 'Projet en vedette',
-    todoTitle: 'Système de Gestion de Tâches',
-    todoDesc:
-      'Une application web intuitive pour organiser les tâches quotidiennes. Réalisée avec React et Tailwind CSS, elle offre une interface fluide et responsive.',
-    ecommerceTitle: 'Système de Support de Tickets',
-    ecommerceDesc:
-      'Application web développée lors de mon stage, permettant de gérer des tickets pour des problèmes techniques. Utilise React.js, Nest.js et MySQL.',
+    projectPortfolioTitle: 'Portfolio personnel',
+    projectPortfolioDesc:
+      'Développement de mon portfolio pour présenter mes compétences, parcours et projets récents.',
+    projectTodoTitle: 'Todo App',
+    projectTodoDesc:
+      'Application de gestion de tâches avec enregistrement local et interface responsive.',
+    projectDeezerTitle: 'Clone Deezer',
+    projectDeezerDesc:
+      'Clone simplifié de Deezer avec lecteur audio, recherche dynamique et playlists.',
+    projectBookingTitle: 'Booking App',
+    projectBookingDesc:
+      'Application fullstack pour réservation de salles avec authentification, WebSocket et calendrier.',
     viewCode: 'Voir le code',
     viewLive: 'Voir le site',
 
@@ -52,13 +69,19 @@ const translations = {
 
     // Footer
     builtBy: '',
+    footerRights: '© 2025 Hary Miora Raoeliarijaona. Tous droits réservés.',
 
-    // Skills
-    technologies: 'Technologies'
+    // UI
+    technologies: 'Technologies',
+    langFrench: 'Français',
+    langEnglish: 'English',
+    themeLight: 'Clair',
+    themeDark: 'Sombre'
   },
 
   en: {
     // Navigation
+    home: 'Home',
     about: 'Services',
     experience: 'Experience',
     projects: 'Projects',
@@ -69,6 +92,7 @@ const translations = {
     name: 'Hary Miora RAOELIARIJAONA',
     title: 'Computer science student passionate about web development.',
     subtitle: 'Full-Stack Web Developer',
+    downloadCv: 'Download CV',
     description:
       'I’m currently a Master’s student in Software Engineering at ENI Fianarantsoa. I enjoy building modern and accessible web applications that provide real value.',
     viewProjects: 'See my projects',
@@ -85,15 +109,27 @@ const translations = {
     aboutDesc3:
       'I can also improve an existing project through UI redesign, bug fixing, performance tuning, code structure cleanup and launch preparation.',
 
+    // Skills section
+    skillsFrontend: 'Frontend',
+    skillsBackend: 'Backend',
+    skillsDatabase: 'Database',
+    skillsTools: 'Tools & more',
+
     // Projects section
     projectsTitle: 'Projects I’ve Built',
     featuredProject: 'Featured Project',
-    todoTitle: 'Task Management System',
-    todoDesc:
-      'A modern task management app built with React and Tailwind CSS. Simple, intuitive, and responsive.',
-    ecommerceTitle: 'Ticketing Support System',
-    ecommerceDesc:
-      'A web-based ticket management system developed during my internship. Built with React.js, Nest.js, and MySQL.',
+    projectPortfolioTitle: 'Personal portfolio',
+    projectPortfolioDesc:
+      'Built my portfolio to showcase my skills, background and recent work.',
+    projectTodoTitle: 'Todo App',
+    projectTodoDesc:
+      'Task management app with local persistence and a responsive interface.',
+    projectDeezerTitle: 'Deezer Clone',
+    projectDeezerDesc:
+      'Simplified Deezer clone with audio player, dynamic search and playlists.',
+    projectBookingTitle: 'Booking App',
+    projectBookingDesc:
+      'Full-stack room booking application with authentication, WebSocket support and calendar features.',
     viewCode: 'View Code',
     viewLive: 'Live Demo',
 
@@ -108,27 +144,55 @@ const translations = {
 
     // Footer
     builtBy: '',
+    footerRights: '© 2025 Hary Miora Raoeliarijaona. All rights reserved.',
 
-    // Skills
-    technologies: 'Technologies'
+    // UI
+    technologies: 'Technologies',
+    langFrench: 'French',
+    langEnglish: 'English',
+    themeLight: 'Light',
+    themeDark: 'Dark'
   }
 };
 
-export const useLanguage = () => {
-  const [language, setLanguage] = useState('fr');
+const getStoredLanguage = () => {
+  if (typeof window === 'undefined') {
+    return 'fr';
+  }
 
-  useEffect(() => {
-    const savedLanguage = localStorage.getItem('language') || 'fr';
-    setLanguage(savedLanguage);
-  }, []);
+  return localStorage.getItem(LANGUAGE_STORAGE_KEY) || 'fr';
+};
+
+const subscribe = (callback) => {
+  if (typeof window === 'undefined') {
+    return () => {};
+  }
+
+  const handleLanguageChange = () => callback();
+
+  window.addEventListener(LANGUAGE_EVENT, handleLanguageChange);
+  window.addEventListener('storage', handleLanguageChange);
+
+  return () => {
+    window.removeEventListener(LANGUAGE_EVENT, handleLanguageChange);
+    window.removeEventListener('storage', handleLanguageChange);
+  };
+};
+
+export const useLanguage = () => {
+  const language = useSyncExternalStore(subscribe, getStoredLanguage, () => 'fr');
 
   const toggleLanguage = () => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
     const newLanguage = language === 'fr' ? 'en' : 'fr';
-    setLanguage(newLanguage);
-    localStorage.setItem('language', newLanguage);
+    localStorage.setItem(LANGUAGE_STORAGE_KEY, newLanguage);
+    window.dispatchEvent(new Event(LANGUAGE_EVENT));
   };
 
-  const t = (key) => translations[language][key] || key;
+  const t = (key) => translations[language]?.[key] || key;
 
   return { language, toggleLanguage, t };
 };

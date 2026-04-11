@@ -53,7 +53,7 @@ function Sidebar({ darkMode, toggleDarkMode, closeSidebar }) {
 
       <nav className="space-y-6">
         {[
-          { key: 'home', label: t('home') || 'Accueil' },
+          { key: 'home', label: t('home') },
           { key: 'about', label: t('about') },
           { key: 'skills', label: t('technologies') },
           { key: 'projects', label: t('projects') },

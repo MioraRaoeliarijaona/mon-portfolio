@@ -34,7 +34,7 @@ function Navbar({ darkMode, toggleDarkMode }) {
   };
 
   const navigationItems = [
-    { key: 'home', label: t('home') || 'Accueil' },
+    { key: 'home', label: t('home') },
     { key: 'about', label: t('about') },
     { key: 'skills', label: t('technologies') },
     { key: 'projects', label: t('projects') },
@@ -151,7 +151,7 @@ function Navbar({ darkMode, toggleDarkMode }) {
                     : 'bg-white text-slate-700 hover:bg-white'
                 }`}
               >
-                {language === 'en' ? 'Français' : 'English'}
+              {language === 'en' ? t('langFrench') : t('langEnglish')}
               </button>
 
               <button
@@ -165,12 +165,12 @@ function Navbar({ darkMode, toggleDarkMode }) {
                 {darkMode ? (
                   <>
                     <HiSun size={18} />
-                    <span>Clair</span>
+                    <span>{t('themeLight')}</span>
                   </>
                 ) : (
                   <>
                     <HiMoon size={18} />
-                    <span>Sombre</span>
+                    <span>{t('themeDark')}</span>
                   </>
                 )}
               </button>

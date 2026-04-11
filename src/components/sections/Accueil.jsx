@@ -42,7 +42,7 @@ function Accueil() {
           </h1>
 
           <h2 className="text-xl sm:text-2xl md:text-3xl text-emerald-700 dark:text-emerald-300 font-semibold mb-6">
-            Développeur Web Full-Stack
+            {t('subtitle')}
           </h2>
 
           <p className="adaptive-contrast-text-soft text-base sm:text-lg max-w-xl mx-auto md:mx-0 leading-relaxed mb-10">
@@ -63,7 +63,7 @@ function Accueil() {
             <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-600 text-white shadow-[0_10px_24px_rgba(15,159,127,0.35)] dark:bg-emerald-400 dark:text-emerald-950">
               <HiArrowDownTray size={18} />
             </span>
-            {t('download CV') || 'Download CV'}
+            {t('downloadCv')}
           </a>
         </div>
       </div>

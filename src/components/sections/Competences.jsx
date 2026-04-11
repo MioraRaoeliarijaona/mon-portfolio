@@ -27,7 +27,7 @@ import postmanLogo from '../../assets/skills/postman.svg';
 
 const skillCategories = [
   {
-    title: 'Frontend',
+    titleKey: 'skillsFrontend',
     skills: [
       { name: 'HTML5', icon: htmlLogo },
       { name: 'CSS3', icon: cssLogo },
@@ -39,7 +39,7 @@ const skillCategories = [
     ],
   },
   {
-    title: 'Backend',
+    titleKey: 'skillsBackend',
     skills: [
       { name: 'Node.js', icon: nodeLogo },
       { name: 'Express.js', icon: expressLogo },
@@ -47,7 +47,7 @@ const skillCategories = [
     ],
   },
   {
-    title: 'Database',
+    titleKey: 'skillsDatabase',
     skills: [
       { name: 'MySQL', icon: mysqlLogo },
       { name: 'MongoDB', icon: mongoLogo },
@@ -55,7 +55,7 @@ const skillCategories = [
     ],
   },
   {
-    title: 'Outils & Autres',
+    titleKey: 'skillsTools',
     skills: [
       { name: 'Git', icon: gitLogo },
       { name: 'GitHub', icon: githubLogo },
@@ -86,7 +86,7 @@ function Competences() {
           {skillCategories.map((category, index) => (
             <div key={index}>
               <h3 className="adaptive-contrast-text text-xl font-semibold mb-5">
-                {category.title}
+                {t(category.titleKey)}
               </h3>
               <div className="flex flex-wrap gap-4">
                 {category.skills.map((skill, skillIndex) => (
