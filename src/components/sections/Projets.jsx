@@ -47,7 +47,6 @@ function Projets() {
         {/* Titre */}
         <div className="flex items-center mb-12">
           <h2 className="adaptive-contrast-text font-display text-3xl font-bold mr-4">
-            <span className="section-index font-mono text-xl mr-2">03.</span>
             Mes projets
           </h2>
           <div className="flex-1 h-px bg-emerald-600/18 dark:bg-emerald-300/18 ml-4"></div>
@@ -68,7 +67,7 @@ function Projets() {
                 />
               </div>
 
-              <div className="flex h-full flex-col justify-between p-6">
+              <div className="flex h-full flex-col p-6">
                 {/* Titre */}
                 <div className="mb-4 flex items-start justify-between gap-3">
                   <h3 className="adaptive-contrast-text text-xl font-semibold">
@@ -90,53 +89,51 @@ function Projets() {
                 </p>
 
                 {/* Technologies */}
-                <div className="mt-auto">
-                  <div className="mb-5 flex flex-wrap gap-2">
-                    {project.technologies.map((tech, i) => (
-                      <span
-                        key={i}
-                        className="chip-surface rounded-full px-3 py-1 text-xs font-mono"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                <div className="mb-6 flex flex-wrap gap-2">
+                  {project.technologies.map((tech, i) => (
+                    <span
+                      key={i}
+                      className="chip-surface rounded-2xl px-3 py-2 text-xs font-mono"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
 
-                  <div className="flex flex-wrap gap-3">
-                    {project.live && project.live !== '#' ? (
-                      <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 rounded-2xl bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white shadow-[0_14px_30px_rgba(15,159,127,0.24)] transition hover:-translate-y-0.5 hover:bg-emerald-700"
-                      >
-                        <FaExternalLinkAlt size={14} />
-                        {t('viewLive')}
-                      </a>
-                    ) : (
-                      <span className="ghost-button-surface adaptive-contrast-text-soft inline-flex items-center gap-2 rounded-2xl px-4 py-2.5 text-sm font-semibold">
-                        <FaExternalLinkAlt size={14} />
-                        {t('viewLive')}
-                      </span>
-                    )}
+                <div className="mt-auto flex flex-wrap gap-3">
+                  {project.live && project.live !== '#' ? (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-2xl bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white shadow-[0_14px_30px_rgba(15,159,127,0.24)] transition hover:-translate-y-0.5 hover:bg-emerald-700"
+                    >
+                      <FaExternalLinkAlt size={14} />
+                      {t('viewLive')}
+                    </a>
+                  ) : (
+                    <span className="ghost-button-surface adaptive-contrast-text-soft inline-flex items-center gap-2 rounded-2xl px-4 py-2.5 text-sm font-semibold">
+                      <FaExternalLinkAlt size={14} />
+                      {t('viewLive')}
+                    </span>
+                  )}
 
-                    {project.github && project.github !== '#' ? (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="ghost-button-surface adaptive-contrast-text inline-flex items-center gap-2 rounded-2xl px-4 py-2.5 text-sm font-semibold transition hover:-translate-y-0.5 hover:border-emerald-500/50 hover:text-emerald-700 dark:hover:text-emerald-300"
-                      >
-                        <FaGithub size={15} />
-                        {t('viewCode')}
-                      </a>
-                    ) : (
-                      <span className="ghost-button-surface adaptive-contrast-text-soft inline-flex items-center gap-2 rounded-2xl px-4 py-2.5 text-sm font-semibold">
-                        <FaGithub size={15} />
-                        {t('viewCode')}
-                      </span>
-                    )}
-                  </div>
+                  {project.github && project.github !== '#' ? (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="ghost-button-surface adaptive-contrast-text inline-flex items-center gap-2 rounded-2xl px-4 py-2.5 text-sm font-semibold transition hover:-translate-y-0.5 hover:border-emerald-500/50 hover:text-emerald-700 dark:hover:text-emerald-300"
+                    >
+                      <FaGithub size={15} />
+                      {t('viewCode')}
+                    </a>
+                  ) : (
+                    <span className="ghost-button-surface adaptive-contrast-text-soft inline-flex items-center gap-2 rounded-2xl px-4 py-2.5 text-sm font-semibold">
+                      <FaGithub size={15} />
+                      {t('viewCode')}
+                    </span>
+                  )}
                 </div>
               </div>
             </div>

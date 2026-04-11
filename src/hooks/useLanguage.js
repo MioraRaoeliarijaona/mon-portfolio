@@ -47,6 +47,8 @@ const translations = {
     contactText:
       'Je suis toujours ouvert aux collaborations ou simplement à discuter autour du développement web. N’hésitez pas à m’écrire pour toute question ou projet.',
     sayHello: 'Me contacter',
+    contactCta: 'Envoyer un email',
+    contactMail: 'mioraraoeliarijaona@gmail.com',
 
     // Footer
     builtBy: '',
@@ -101,6 +103,8 @@ const translations = {
     contactText:
       'I’m always open to collaborations or chatting about tech. Feel free to reach out if you have any questions or project ideas!',
     sayHello: 'Contact Me',
+    contactCta: 'Send an email',
+    contactMail: 'mioraraoeliarijaona@gmail.com',
 
     // Footer
     builtBy: '',
