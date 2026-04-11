@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { HiSun, HiMoon, HiMenuAlt3, HiX } from 'react-icons/hi';
 import { useLanguage } from '../../hooks/useLanguage';
-import logoMiora from '/assets/images/logo-miora.png';
 
 function Navbar({ darkMode, toggleDarkMode }) {
   const { language, toggleLanguage, t } = useLanguage();
@@ -51,11 +50,7 @@ function Navbar({ darkMode, toggleDarkMode }) {
             : 'bg-[rgba(246,248,245,0.78)] backdrop-blur-xl'
         }`}
       >
-        <div className="flex items-center gap-3">
-          <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-2xl border border-emerald-500/20 bg-white/80 shadow-[0_12px_30px_rgba(15,159,127,0.12)] dark:bg-emerald-950/70">
-            <img src={logoMiora} alt="Logo Miora" className="h-9 w-9 object-contain" />
-          </div>
-        </div>
+        <div className="w-0 md:w-16" />
 
         {/* Menu navigation au centre - Desktop only */}
         <div className="hidden md:flex items-center gap-8">
