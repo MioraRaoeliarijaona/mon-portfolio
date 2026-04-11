@@ -37,7 +37,7 @@ function Accueil() {
         {/* ===== Texte ===== */}
         <div className="order-2 md:order-1 text-center md:text-left">
 
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 dark:text-emerald-50 mb-4 leading-none">
+          <h1 className="adaptive-contrast-text font-display text-4xl sm:text-5xl md:text-6xl font-bold mb-4 leading-none">
             {t('name')}
           </h1>
 
@@ -45,7 +45,7 @@ function Accueil() {
             Développeur Web Full-Stack
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-700 dark:text-emerald-50/72 max-w-xl mx-auto md:mx-0 leading-relaxed mb-10">
+          <p className="adaptive-contrast-text-soft text-base sm:text-lg max-w-xl mx-auto md:mx-0 leading-relaxed mb-10">
             {t('description')}
           </p>
 

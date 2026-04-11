@@ -13,7 +13,7 @@ function Footer() {
         "
       >
         {/* Icônes sociales */}
-        <div className="flex justify-center gap-6 text-slate-500 dark:text-emerald-50/58">
+        <div className="adaptive-contrast-text-soft flex justify-center gap-6">
           <a
             href="https://github.com/HaryMiora"
             target="_blank"
@@ -33,7 +33,7 @@ function Footer() {
         </div>
 
         {/* Droits d’auteur */}
-        <p className="text-xs text-slate-500 dark:text-emerald-50/46">
+        <p className="adaptive-contrast-text-soft text-xs">
           &copy; 2025 Hary Miora Raoeliarijaona. Tous droits réservés.
         </p>
       </div>

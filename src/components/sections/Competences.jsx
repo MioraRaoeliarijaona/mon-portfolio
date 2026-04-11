@@ -75,8 +75,8 @@ function Competences() {
       <div className="max-w-4xl mx-auto">
         {/* Titre */}
         <div className="flex items-center mb-10">
-          <h2 className="font-display text-3xl font-bold text-slate-900 dark:text-emerald-50 mr-4">
-            <span className="text-emerald-600 dark:text-emerald-300 font-mono text-xl mr-2">02.</span>
+          <h2 className="adaptive-contrast-text font-display text-3xl font-bold mr-4">
+            <span className="section-index font-mono text-xl mr-2">02.</span>
             {t('technologies')}
           </h2>
           <div className="flex-1 h-px bg-emerald-600/18 dark:bg-emerald-300/18 ml-4"></div>
@@ -86,7 +86,7 @@ function Competences() {
         <div className="space-y-10">
           {skillCategories.map((category, index) => (
             <div key={index}>
-              <h3 className="text-xl font-semibold text-slate-900 dark:text-emerald-50 mb-5">
+              <h3 className="adaptive-contrast-text text-xl font-semibold mb-5">
                 {category.title}
               </h3>
               <div className="flex flex-wrap gap-4">
@@ -100,7 +100,7 @@ function Competences() {
                       alt={skill.name}
                       className="w-10 h-10 object-contain hover:scale-110 transition-transform duration-200"
                     />
-                    <span className="mt-3 text-sm text-slate-800 dark:text-emerald-50/88 text-center">
+                    <span className="adaptive-contrast-text mt-3 text-sm text-center">
                       {skill.name}
                     </span>
                   </div>

@@ -30,8 +30,8 @@ function Contact() {
       <div className="max-w-2xl mx-auto">
         {/* Titre */}
         <div className="flex items-center mb-10">
-          <h2 className="font-display text-3xl font-bold text-slate-900 dark:text-emerald-50 mr-4">
-            <span className="text-emerald-600 dark:text-emerald-300 font-mono text-xl mr-2">04.</span>
+          <h2 className="adaptive-contrast-text font-display text-3xl font-bold mr-4">
+            <span className="section-index font-mono text-xl mr-2">04.</span>
             Contact
           </h2>
           <div className="flex-1 h-px bg-emerald-600/18 dark:bg-emerald-300/18 ml-4"></div>
@@ -43,7 +43,7 @@ function Contact() {
           className="panel-surface space-y-6 rounded-[1.75rem] p-6"
         >
           <div className="flex flex-col text-left">
-            <label htmlFor="nom" className="mb-2 font-semibold text-slate-800 dark:text-white">
+            <label htmlFor="nom" className="adaptive-contrast-text mb-2 font-semibold">
               Nom
             </label>
             <input
@@ -58,7 +58,7 @@ function Contact() {
           </div>
 
           <div className="flex flex-col text-left">
-            <label htmlFor="email" className="mb-2 font-semibold text-slate-800 dark:text-white">
+            <label htmlFor="email" className="adaptive-contrast-text mb-2 font-semibold">
               Adresse Email
             </label>
             <input
@@ -73,7 +73,7 @@ function Contact() {
           </div>
 
           <div className="flex flex-col text-left">
-            <label htmlFor="message" className="mb-2 font-semibold text-slate-800 dark:text-white">
+            <label htmlFor="message" className="adaptive-contrast-text mb-2 font-semibold">
               Message
             </label>
             <textarea

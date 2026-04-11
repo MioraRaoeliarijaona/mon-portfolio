@@ -23,8 +23,8 @@ function APropos() {
       <div className="max-w-4xl mx-auto">
         {/* Titre */}
         <div className="flex items-center mb-10">
-          <h2 className="font-display text-3xl font-bold text-slate-900 dark:text-emerald-50 mr-4">
-            <span className="text-emerald-600 dark:text-emerald-300 font-mono text-xl mr-2">01.</span>
+          <h2 className="adaptive-contrast-text font-display text-3xl font-bold mr-4">
+            <span className="section-index font-mono text-xl mr-2">01.</span>
             {t('aboutTitle')}
           </h2>
           <div className="flex-1 h-px bg-emerald-600/18 dark:bg-emerald-300/18 ml-4"></div>
@@ -37,10 +37,10 @@ function APropos() {
               className="panel-surface-soft rounded-[1.5rem] p-6 transition duration-200 hover:-translate-y-1 hover:border-emerald-500/50"
             >
               <div className="mb-4 h-10 w-10 rounded-2xl bg-emerald-600/10 ring-1 ring-emerald-600/20 dark:bg-emerald-400/10 dark:ring-white/15" />
-              <h3 className="mb-3 font-display text-xl font-bold text-slate-900 dark:text-white">
+              <h3 className="adaptive-contrast-text mb-3 font-display text-xl font-bold">
                 {service.title}
               </h3>
-              <p className="text-sm leading-7 text-slate-800 dark:text-white">
+              <p className="adaptive-contrast-text text-sm leading-7">
                 {service.description}
               </p>
             </article>

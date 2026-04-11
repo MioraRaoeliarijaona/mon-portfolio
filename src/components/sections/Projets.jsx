@@ -46,8 +46,8 @@ function Projets() {
       <div className="max-w-6xl mx-auto">
         {/* Titre */}
         <div className="flex items-center mb-12">
-          <h2 className="font-display text-3xl font-bold text-slate-900 dark:text-emerald-50 mr-4">
-            <span className="text-emerald-600 dark:text-emerald-300 font-mono text-xl mr-2">03.</span>
+          <h2 className="adaptive-contrast-text font-display text-3xl font-bold mr-4">
+            <span className="section-index font-mono text-xl mr-2">03.</span>
             Mes projets
           </h2>
           <div className="flex-1 h-px bg-emerald-600/18 dark:bg-emerald-300/18 ml-4"></div>
@@ -71,21 +71,21 @@ function Projets() {
               <div className="flex h-full flex-col justify-between p-6">
                 {/* Titre */}
                 <div className="mb-4 flex items-start justify-between gap-3">
-                  <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
+                  <h3 className="adaptive-contrast-text text-xl font-semibold">
                     {project.title}
                   </h3>
                   <div className="flex gap-3">
-                    <span className="text-slate-500 transition dark:text-white/72">
+                    <span className="adaptive-contrast-text-soft transition">
                       <FaGithub size={18} />
                     </span>
-                    <span className="text-slate-500 transition dark:text-white/72">
+                    <span className="adaptive-contrast-text-soft transition">
                       <FaExternalLinkAlt size={16} />
                     </span>
                   </div>
                 </div>
 
                 {/* Description */}
-                <p className="mb-5 text-sm leading-6 text-slate-800 dark:text-white">
+                <p className="adaptive-contrast-text mb-5 text-sm leading-6">
                   {project.description}
                 </p>
 
@@ -114,7 +114,7 @@ function Projets() {
                         {t('viewLive')}
                       </a>
                     ) : (
-                      <span className="ghost-button-surface inline-flex items-center gap-2 rounded-2xl px-4 py-2.5 text-sm font-semibold text-slate-600 dark:text-white/50">
+                      <span className="ghost-button-surface adaptive-contrast-text-soft inline-flex items-center gap-2 rounded-2xl px-4 py-2.5 text-sm font-semibold">
                         <FaExternalLinkAlt size={14} />
                         {t('viewLive')}
                       </span>
@@ -125,13 +125,13 @@ function Projets() {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="ghost-button-surface inline-flex items-center gap-2 rounded-2xl px-4 py-2.5 text-sm font-semibold text-slate-900 transition hover:-translate-y-0.5 hover:border-emerald-500/50 hover:text-emerald-700 dark:text-white"
+                        className="ghost-button-surface adaptive-contrast-text inline-flex items-center gap-2 rounded-2xl px-4 py-2.5 text-sm font-semibold transition hover:-translate-y-0.5 hover:border-emerald-500/50 hover:text-emerald-700 dark:hover:text-emerald-300"
                       >
                         <FaGithub size={15} />
                         {t('viewCode')}
                       </a>
                     ) : (
-                      <span className="ghost-button-surface inline-flex items-center gap-2 rounded-2xl px-4 py-2.5 text-sm font-semibold text-slate-600 dark:text-white/50">
+                      <span className="ghost-button-surface adaptive-contrast-text-soft inline-flex items-center gap-2 rounded-2xl px-4 py-2.5 text-sm font-semibold">
                         <FaGithub size={15} />
                         {t('viewCode')}
                       </span>
