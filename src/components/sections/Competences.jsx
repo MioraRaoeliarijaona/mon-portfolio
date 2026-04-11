@@ -76,7 +76,6 @@ function Competences() {
         {/* Titre */}
         <div className="flex items-center mb-10">
           <h2 className="adaptive-contrast-text font-display text-3xl font-bold mr-4">
-            <span className="section-index font-mono text-xl mr-2">02.</span>
             {t('technologies')}
           </h2>
           <div className="flex-1 h-px bg-emerald-600/18 dark:bg-emerald-300/18 ml-4"></div>
